@@ -1,0 +1,20 @@
+MagicItemsList["handcone of clarity"] = {
+	name : "Handcone of Clarity",
+	source : ["HB", 0],
+               rarity : "wondrous",
+	type : "wondrous item",
+	description : "When spells or bardic abilities are cast through the Hand Cone, it increases the spell DC by 2.",
+	descriptionFull : "When spells or bardic abilities are cast through the Hand Cone, it increases the spell DC by 2.",
+	attunement : false,
+	weight : 2,
+	prerequisite : "Requires attunement by a bard",
+	prereqeval : function(v) {return classes.known.bard;},
+	calcChanges : {
+	                         spellCalc : [
+			function (type, spellcasters, ability) {
+				if (type != "prepare" && (/bard/).test(spellcasters)) return 2;
+				},
+				"I gain a +2 bonus to spell attack rolls and to the saving throw DCs of my warlock spells."
+
+			]
+		}
