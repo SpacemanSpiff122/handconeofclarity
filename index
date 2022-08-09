@@ -12,9 +12,10 @@ MagicItemsList["handcone of clarity"] = {
 	calcChanges : {
 	                         spellCalc : [
 			function (type, spellcasters, ability) {
-				if (type != "prepare" && (/bard/).test(spellcasters)) return 2;
+				if (type === "dc" && (/bard/).test(spellcasters)) return 2;
 				},
-				"I gain a +2 bonus to spell attack rolls and to the saving throw DCs of my warlock spells."
+				"I gain a +2 bonus to spell attack rolls and to the saving throw DCs of my Bard spells."
 
 			]
 		}
+	};
